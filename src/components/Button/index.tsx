@@ -1,5 +1,4 @@
-import React, {ReactElement} from 'react';
-import classnames from 'classnames';
+import React from 'react';
 
 export interface TCButtonProps {
   /**
@@ -73,34 +72,19 @@ export const TCButton: React.FC<TCButtonProps> = ({
   onClick,
   ...props
 }: TCButtonProps) => {
-  const width = fullWidth && 'btn-block';
+  const width = fullWidth ? 'btn-block' : '';
   const buttonStyle = type === 'submit' ? 'btn-primary' : `btn-${type}`;
-  const buttonSize = size && `btn-${size}`;
+  const buttonSize = size ? `btn-${size}` : '';
   const buttonOutline =
     type === 'secondary' ||
     type === 'tertiary' ||
     type === 'tertiary-icon' ||
-    (outline && 'btn-outline-primary');
+    outline
+      ? 'btn-outline-primary'
+      : '';
   const buttonActive = active ? 'active' : disabled && 'disabled';
 
   const classString = `${width} ${buttonStyle} ${buttonSize} ${buttonOutline} ${buttonActive} tc-btn btn className`;
-
-  //   const classString = classnames({
-  //     'tc-btn btn': true,
-  //     active,
-  //     disabled,
-  //     'btn-block': fullWidth,
-  //     'btn-primary': type === 'submit' || !type,
-  //     [`btn-${type}`]: type !== 'primary' && type !== 'secondary' && type,
-  //     [`btn-outline-primary`]:
-  //       type === 'secondary' ||
-  //       type === 'tertiary' ||
-  //       type === 'tertiary-icon' ||
-  //       outline,
-  //     [`btn-${size}`]: size,
-  //     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  //     [className!]: className,
-  //   });
 
   return (
     <button

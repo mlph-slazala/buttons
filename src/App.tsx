@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
-import {Button} from 'antd';
+import {FC} from 'react';
 import TCButton from './components/Button/index';
+import CustomSvg from './components/CustomSvg/index';
 // import logo from '/icons/icon-user-secondary.svg';
 
 import './App.scss';
@@ -18,12 +18,12 @@ const App: FC = () => (
       </TCButton>
       <TCButton
         size='lg'
-        type='primary-icon'
+        type='primary'
         active
         onClick={function noRefCheck() {}}
       >
         <div>
-          <img src='/icons/icon-user-secondary.svg' />
+          <CustomSvg />
           <div>Account</div>
         </div>
       </TCButton>
@@ -37,12 +37,12 @@ const App: FC = () => (
       </TCButton>
       <TCButton
         size='lg'
-        type='primary-icon'
+        type='primary'
         disabled
         onClick={function noRefCheck() {}}
       >
         <div>
-          <img src='/icons/icon-user-secondary4.svg' />
+          <CustomSvg />
           <div>Account</div>
         </div>
       </TCButton>
@@ -57,12 +57,12 @@ const App: FC = () => (
       </TCButton>
       <TCButton
         size='lg'
-        type='secondary-icon'
+        type='secondary'
         active
         onClick={function noRefCheck() {}}
       >
         <div>
-          <img src='/icons/icon-user-secondary3.svg' />
+          <CustomSvg />
           <div>secondary</div>
         </div>
       </TCButton>
@@ -76,12 +76,12 @@ const App: FC = () => (
       </TCButton>
       <TCButton
         size='lg'
-        type='secondary-icon'
+        type='secondary'
         disabled
         onClick={function noRefCheck() {}}
       >
         <div>
-          <img src='/icons/icon-user-secondary4.svg' />
+          <CustomSvg />
           <div>secondary</div>
         </div>
       </TCButton>
